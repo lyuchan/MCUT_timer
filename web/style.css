@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+.timer {
+    color: white;
+    background-color: rgb(0, 0, 0);
+    font-size: calc(35vw - 100px);
+    text-align: center;
+    -webkit-text-stroke: 5px black;
+    font-family: "微軟正黑", Arial, sans-serif;
+}

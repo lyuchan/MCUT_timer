@@ -15,13 +15,15 @@ ws.onmessage = event => {
         let number = formatSecond(res.data);
         let timer = document.getElementById("timer");
         timer.innerHTML = number;
-
-        if (res.data == 0) {//隱藏
-
-        } else {//顯示
-
+        if (res.data > 30) {
+            timer.style.backgroundColor = "green";
+        } else if (res.data > 10) {
+            timer.style.backgroundColor = "orange";
+        } else if (res.data > 0) {
+            timer.style.backgroundColor = "red";
+        } else {
+            timer.style.backgroundColor = "black";
         }
-
     }
 
 

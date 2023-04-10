@@ -4,7 +4,9 @@ const webapp = express();
 let time = 0, stop = false;
 let istimer;
 const server = webapp.listen(webPORT, () => {
-    console.log("Application started and Listening on port 80");
+    console.log("Application started and Listening on port", webPORT.toString());
+    console.log("use http://127.0.0.1:%d to web timer", webPORT);
+    console.log("use http://127.0.0.1:%d/admin to set timer", webPORT);
 });
 const SocketServer = require("ws").Server;
 const wss = new SocketServer({ server });
@@ -27,7 +29,7 @@ wss.on("connection", (ws) => {
         }
     });
     ws.on("close", () => {
-        console.log("有人段開連線");
+        console.log("有人斷開連線");
     });
 });
 function updatetime(number) {
